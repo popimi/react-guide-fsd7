@@ -10,17 +10,11 @@ const HomePage = () => {
   const [bookData, setBookData] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  function handleChange(e) {
-    setInputText(e.target.value);
-    fetchData();
-  }
-
   async function fetchData() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://www.omdbapi.com/?apikey=202a113f&s=%27${inputText}%27&short=full`,
-        data
+        `https://www.omdbapi.com/?apikey=202a113f&s=%27${inputText}%27&short=full`
       );
       const data = response.data.Search;
       if (data) {
@@ -33,6 +27,11 @@ const HomePage = () => {
       console.error(error);
       setLoading(false);
     }
+  }
+
+  function handleChange(e) {
+    setInputText(e.target.value);
+    fetchData();
   }
 
   return (
