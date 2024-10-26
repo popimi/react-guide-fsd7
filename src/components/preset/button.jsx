@@ -7,7 +7,7 @@ const Button = ({ children, type, handleClick }) => {
   return (
     <button
       className={`${buttonScheme[type]} min-w-20 h-10 pb-1 rounded-md`}
-      onClick={() => handleClick() || ""}
+      onClick={handleClick}
     >
       {children}
     </button>

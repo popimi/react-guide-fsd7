@@ -70,7 +70,11 @@ const Navbar = () => {
                 {item.title}
               </a>
             ))}
-            <AuthButton />
+            <AuthButton
+              width={width}
+              setIsMobileMenuOpen={setIsMobileMenuOpen}
+              isMobileMenuOpen={isMobileMenuOpen}
+            />
           </div>
         </div>
       </nav>

@@ -1,5 +1,5 @@
-import Button from "../preset/button";
 import { useNavigate } from "react-router-dom";
+import Button from "../preset/button";
 
 const AuthButton = ({ setIsMobileMenuOpen }) => {
   const navigate = useNavigate();
@@ -7,7 +7,7 @@ const AuthButton = ({ setIsMobileMenuOpen }) => {
     <div className="flex gap-2">
       <Button
         type="primary"
-        onClick={() => {
+        handleClick={() => {
           setIsMobileMenuOpen(false);
           navigate("/login");
         }}
@@ -16,7 +16,7 @@ const AuthButton = ({ setIsMobileMenuOpen }) => {
       </Button>
       <Button
         type="secondary"
-        onClick={() => {
+        handleClick={() => {
           setIsMobileMenuOpen(false);
           navigate("/register");
         }}
